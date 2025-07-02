@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-traditional",
+  "version": "1.0.0",
+  "description": "Traditional HTML/CSS/JS Portfolio Website",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "http-server . -p 8080 --cors -g",
+    "dev": "http-server . -p 8080 --cors -g"
+  },
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

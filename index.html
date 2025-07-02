@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Your Name</title>
+    <meta name="description" content="Professional portfolio showcasing my work, skills, and experience in web development, design, and digital solutions">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="web developer, portfolio, frontend, UI/UX, JavaScript, React">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Your Name - Professional Portfolio">
+    <meta property="og:description" content="Explore my work, skills, and professional experience in web development and design">
+    <meta property="og:image" content="https://yourwebsite.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Name - Professional Portfolio">
+    <meta name="twitter:description" content="Explore my work, skills, and professional experience in web development and design">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/og-image.jpg">
+    
+    <!-- Theme Color for Browser -->
+    <meta name="theme-color" content="#5e3bee">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Your Name",
+        "url": "https://yourwebsite.com",
+        "image": "https://yourwebsite.com/assets/about-image.jpg",
+        "jobTitle": "Web Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Your Company"
+        },
+        "sameAs": [
+            "https://github.com/yourusername",
+            "https://linkedin.com/in/yourusername",
+            "https://twitter.com/yourusername"
+        ],
+        "knowsAbout": ["Web Development", "UI/UX Design", "JavaScript", "React", "Node.js"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main" class="skip-to-content">Skip to content</a>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#" class="logo-link">YourName<span>.</span></a>
+                </div>
+                <div class="nav-menu" role="navigation">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text" data-aos="fade-right">
+                        <h1 class="hero-title">Hi, I'm <span class="highlight">Your Name</span></h1>
+                        <h2 class="hero-subtitle">I create <span class="txt-rotate" data-period="2000" data-rotate='["web experiences.", "digital solutions.", "brand identities.", "mobile apps."]'></span></h2>
+                        <p class="hero-description">A passionate developer focused on crafting clean, user-friendly experiences for the web and beyond.</p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-image" data-aos="fade-left">
+                        <div class="image-wrapper">
+                            <img src="assets/hero-image.svg" alt="Hero Illustration">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-scroll">
+                    <a href="#about" class="scroll-down">
+                        <span class="mouse">
+                            <span class="wheel"></span>
+                        </span>
+                        <span class="arrow">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-shape"></div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">My Introduction</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-image" data-aos="fade-right">
+                        <img src="assets/about-image.jpg" alt="About Me">
+                        <div class="experience-badge">
+                            <span class="number">5+</span>
+                            <span class="text">Years of Experience</span>
+                        </div>
+                    </div>
+                    <div class="about-text" data-aos="fade-left">
+                        <p>I am a passionate and creative professional with expertise in web development, UX/UI design, and digital solutions. With a strong background in both front-end and back-end technologies, I specialize in building responsive, accessible, and performant web applications.</p>
+                        <p>My journey in tech began over 5 years ago, and since then, I've collaborated with startups, agencies, and established companies to bring their digital visions to life.</p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <h3>10+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>15+</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>5+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                        </div>
+                        <div class="about-buttons">
+                            <a href="assets/resume.pdf" class="btn btn-primary" download>Download CV</a>
+                            <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">My Technical Level</p>
+                </div>
+                <div class="skills-container">
+                    <div class="skills-content" data-aos="fade-right">
+                        <div class="skills-tabs">
+                            <div class="tab-btn active" data-target="frontend">Frontend</div>
+                            <div class="tab-btn" data-target="backend">Backend</div>
+                            <div class="tab-btn" data-target="design">Design</div>
+                        </div>
+                        
+                        <div class="skills-list active" id="frontend">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-html5"></i>
+                                    <h3>HTML</h3>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <h3>CSS</h3>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-js"></i>
+                                    <h3>JavaScript</h3>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-react"></i>
+                                    <h3>React</h3>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-list" id="backend">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-node-js"></i>
+                                    <h3>Node.js</h3>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-database"></i>
+                                    <h3>MongoDB</h3>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-server"></i>
+                                    <h3>Express</h3>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-cogs"></i>
+                                    <h3>RESTful APIs</h3>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-list" id="design">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fab fa-figma"></i>
+                                    <h3>Figma</h3>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-bezier-curve"></i>
+                                    <h3>Adobe XD</h3>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-pen-nib"></i>
+                                    <h3>Illustrator</h3>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <i class="fas fa-palette"></i>
+                                    <h3>Photoshop</h3>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects section" id="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">My Projects</h2>
+                    <p class="section-subtitle">Recent Work</p>
+                </div>
+                <div class="projects-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="app">App</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="web" data-aos="fade-up">
+                        <div class="project-img">
+                            <img src="assets/project-1.jpg" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <p class="project-description">A modern e-commerce solution with payment integration and user authentication.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="app" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-img">
+                            <img src="assets/project-2.jpg" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Fitness Tracking App</h3>
+                            <p class="project-description">A mobile application for tracking workouts, nutrition, and progress.</p>
+                            <div class="project-tech">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-img">
+                            <img src="assets/project-3.jpg" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Brand Identity</h3>
+                            <p class="project-description">Complete brand identity design for a tech startup company.</p>
+                            <div class="project-tech">
+                                <span>Figma</span>
+                                <span>Illustrator</span>
+                                <span>Photoshop</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View Dribbble"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-img">
+                            <img src="assets/project-4.jpg" alt="Project 4">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portfolio Website</h3>
+                            <p class="project-description">Responsive portfolio website with modern animations and design.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="app" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-img">
+                            <img src="assets/project-5.jpg" alt="Project 5">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Task Management App</h3>
+                            <p class="project-description">A productivity app for managing tasks, projects, and team collaboration.</p>
+                            <div class="project-tech">
+                                <span>Vue.js</span>
+                                <span>Express</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View code on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-img">
+                            <img src="assets/project-6.jpg" alt="Project 6">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mobile App UI/UX</h3>
+                            <p class="project-description">UI/UX design for a mobile application with focus on accessibility.</p>
+                            <div class="project-tech">
+                                <span>Figma</span>
+                                <span>Adobe XD</span>
+                                <span>Prototyping</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View project"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="project-link" aria-label="View on Behance"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-cta" data-aos="fade-up">
+                    <a href="#" class="btn btn-outline">See All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="resume section" id="resume">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">My Resume</h2>
+                    <p class="section-subtitle">Experience & Education</p>
+                </div>
+                <div class="resume-content">
+                    <div class="resume-tabs" data-aos="fade-up">
+                        <button class="tab-btn active" data-target="experience">Experience</button>
+                        <button class="tab-btn" data-target="education">Education</button>
+                    </div>
+                    <div class="resume-sections">
+                        <!-- Experience Section -->
+                        <div class="resume-section active" id="experience" data-aos="fade-up">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2020 - Present</div>
+                                    <div class="timeline-content">
+                                        <h3>Senior Frontend Developer</h3>
+                                        <h4>Tech Company Inc.</h4>
+                                        <p>Leading the frontend development team, architecting scalable solutions, and implementing best practices for web applications.</p>
+                                        <ul class="timeline-list">
+                                            <li>Led development of 3 major web applications</li>
+                                            <li>Reduced load time by 40% through optimization</li>
+                                            <li>Implemented CI/CD pipeline for frontend projects</li>
+                                            <li>Mentored junior developers on the team</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2018 - 2020</div>
+                                    <div class="timeline-content">
+                                        <h3>Web Developer</h3>
+                                        <h4>Creative Agency Ltd.</h4>
+                                        <p>Developed responsive websites and web applications for various clients across different industries.</p>
+                                        <ul class="timeline-list">
+                                            <li>Built 15+ client websites from design to deployment</li>
+                                            <li>Integrated CMS solutions for content management</li>
+                                            <li>Implemented e-commerce functionality for retail clients</li>
+                                            <li>Collaborated with designers to ensure pixel-perfect implementation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2016 - 2018</div>
+                                    <div class="timeline-content">
+                                        <h3>Junior Developer</h3>
+                                        <h4>Startup Solutions</h4>
+                                        <p>Started as a junior developer working on frontend components and learning the basics of web development.</p>
+                                        <ul class="timeline-list">
+                                            <li>Developed UI components for the company's main product</li>
+                                            <li>Fixed bugs and improved existing features</li>
+                                            <li>Participated in code reviews and team meetings</li>
+                                            <li>Learned version control and collaborative development</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Education Section -->
+                        <div class="resume-section" id="education">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2014 - 2016</div>
+                                    <div class="timeline-content">
+                                        <h3>Master's in Computer Science</h3>
+                                        <h4>University Name</h4>
+                                        <p>Specialized in Web Technologies and Human-Computer Interaction.</p>
+                                        <ul class="timeline-list">
+                                            <li>GPA: 3.8/4.0</li>
+                                            <li>Thesis: "Optimizing User Experience in Progressive Web Apps"</li>
+                                            <li>Research assistant in the HCI lab</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2010 - 2014</div>
+                                    <div class="timeline-content">
+                                        <h3>Bachelor's in Computer Science</h3>
+                                        <h4>University Name</h4>
+                                        <p>Foundations in programming, algorithms, and software engineering.</p>
+                                        <ul class="timeline-list">
+                                            <li>GPA: 3.7/4.0</li>
+                                            <li>Dean's List for 6 semesters</li>
+                                            <li>Led the Web Development Club</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2018 - 2019</div>
+                                    <div class="timeline-content">
+                                        <h3>UI/UX Design Certificate</h3>
+                                        <h4>Design Institute</h4>
+                                        <p>Professional certification in user interface and experience design principles.</p>
+                                        <ul class="timeline-list">
+                                            <li>Completed with distinction</li>
+                                            <li>Capstone project featured in annual showcase</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-cta" data-aos="fade-up">
+                    <a href="assets/resume.pdf" class="btn btn-primary" download>Download Full Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Testimonials</h2>
+                    <p class="section-subtitle">Client Feedback</p>
+                </div>
+                <div class="testimonials-slider" data-aos="fade-up">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- Testimonial 1 -->
+                            <div class="swiper-slide testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p class="testimonial-text">Working with this developer was an absolute pleasure. They delivered our project on time and exceeded our expectations in terms of quality and performance.</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/client-1.jpg" alt="Client 1" class="author-img">
+                                    <div class="author-info">
+                                        <h4>Jane Smith</h4>
+                                        <p>CEO, Tech Company</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="swiper-slide testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p class="testimonial-text">The attention to detail and problem-solving abilities are outstanding. Our website not only looks beautiful but performs flawlessly across all devices.</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/client-2.jpg" alt="Client 2" class="author-img">
+                                    <div class="author-info">
+                                        <h4>John Doe</h4>
+                                        <p>Marketing Director, Agency</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="swiper-slide testimonial-card">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p class="testimonial-text">I appreciate the proactive communication and flexibility throughout our project. The developer was receptive to feedback and made adjustments quickly.</p>
+                                <div class="testimonial-author">
+                                    <img src="assets/client-3.jpg" alt="Client 3" class="author-img">
+                                    <div class="author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Product Manager, Startup</p>
+                                    </div>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Contact Me</h2>
+                    <p class="section-subtitle">Get In Touch</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>youremail@example.com</p>
+                            <a href="mailto:youremail@example.com" class="contact-link">Write Me</a>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Phone</h3>
+                            <p>+1 (123) 456-7890</p>
+                            <a href="tel:+11234567890" class="contact-link">Call Me</a>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p>City, State, Country</p>
+                            <a href="https://maps.google.com" target="_blank" class="contact-link">View on Map</a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required>
+                                <i class="fas fa-comment-alt"></i>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" required></textarea>
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo-link">YourName<span>.</span></a>
+                    <p class="footer-description">Creating digital experiences that leave an impression.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-socials">
+                    <h3>Connect with Me</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+                <div class="back-to-top">
+                    <a href="#home" aria-label="Back to top">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html> 
