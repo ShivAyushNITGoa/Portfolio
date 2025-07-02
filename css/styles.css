@@ -50,6 +50,19 @@
     --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
     --ease-out-quad: cubic-bezier(0.5, 1, 0.89, 1);
     --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    
+    /* Animation Variables */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 0.8s ease;
+    
+    /* Spacing System */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 5rem;
 }
 
 /*=============== BASE ===============*/
@@ -251,6 +264,18 @@ img {
     font-size: 1.5rem;
     font-weight: var(--font-bold);
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo-link img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover img {
+    transform: scale(1.05);
 }
 
 .logo-link span {
@@ -337,20 +362,126 @@ img {
 
 .hero-image {
     position: relative;
+    animation: simpleFloat 6s ease-in-out infinite;
+    transform-origin: center center;
 }
 
 .image-wrapper {
     position: relative;
-    z-index: 1;
-    animation: float 4s ease-in-out infinite;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+.hero-image:hover .image-wrapper {
+    transform: scale(1.03);
+}
+
+/* Add colorful background elements */
+.hero:before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), transparent);
+    top: 10%;
+    right: 5%;
+    opacity: 0.1;
+    z-index: 0;
+    animation: pulse 8s infinite alternate;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), transparent);
+    bottom: 10%;
+    left: 5%;
+    opacity: 0.1;
+    z-index: 0;
+    animation: pulse 6s infinite alternate-reverse;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.1); opacity: 0.15; }
+    100% { transform: scale(1); opacity: 0.1; }
+}
+
+/* Simplified hero image animation */
+@keyframes simpleFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Add floating elements around the hero image */
+.shape-1,
+.shape-2 {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--primary-color);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    right: 20%;
+    animation: float 7s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 60px;
+    height: 60px;
+    bottom: 10%;
+    left: -20px;
+    background: var(--secondary-color);
+    animation: float 8s ease-in-out infinite 1s;
+}
+
+/* Add decorative shapes */
+.hero-image .shape-1,
+.hero-image .shape-2 {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.hero-image .shape-1 {
+    top: -15%;
+    right: -10%;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transform: rotate(45deg);
+    animation: rotate 10s linear infinite;
+}
+
+.hero-image .shape-2 {
+    bottom: -10%;
+    left: -5%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    animation: float 8s ease-in-out infinite 0.5s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
     }
-    50% {
-        transform: translateY(-20px);
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -450,12 +581,14 @@ img {
 
 .about-image {
     position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(94, 59, 238, 0.15);
 }
 
 .about-image img {
-    width: 100%;
-    border-radius: 1rem;
-    box-shadow: var(--card-shadow);
+    border-radius: 15px;
+    transition: transform 0.5s ease;
 }
 
 .experience-badge {
@@ -1462,4 +1595,329 @@ img.loading {
 
 img.loaded {
     filter: blur(0);
+}
+
+/* Modern card hover effects */
+.project-card, .testimonial-card, .contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backface-visibility: hidden;
+}
+
+.project-card:hover, .testimonial-card:hover, .contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text for highlights */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Improved animations for elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation classes for Intersection Observer */
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color-alt);
+}
+
+/* Improved responsive design with CSS Grid */
+@media screen and (min-width: 992px) {
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--space-lg);
+    }
+    
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: var(--space-xl);
+        align-items: start;
+    }
+}
+
+/* Dark mode toggle animation */
+.theme-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle i {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(360deg);
+}
+
+/* CSS Variables for theme switching */
+.dark-mode {
+    --primary-color: #6b4bff;
+    --primary-color-alt: #5a3deb;
+    --secondary-color: #ff6b6b;
+    --text-color: #e6e6e6;
+    --text-color-light: #a7a7a7;
+    --body-color: #1a1a2e;
+    --container-color: #212138;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*=============== ANIMATION CONTAINERS ===============*/
+.animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.section-animation {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    filter: drop-shadow(0 10px 15px rgba(94, 59, 238, 0.15));
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.section-animation:hover {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 15px 20px rgba(94, 59, 238, 0.25));
+}
+
+.about-image .animation-container {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.skills-container .animation-container {
+    grid-column: 1 / -1;
+    margin-bottom: 3rem;
+}
+
+.projects .animation-container {
+    margin-bottom: 2rem;
+}
+
+.testimonials .animation-container {
+    margin-bottom: 2rem;
+}
+
+.contact .animation-container {
+    margin-bottom: 2rem;
+}
+
+/* Animation for SVG elements */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulseAnimation {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 100;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        transform: translateY(-20px) scale(0.95);
+    }
+    60% {
+        transform: translateY(-10px) scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(1.2);
+    }
+    100% {
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+}
+
+.animated-element {
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.float {
+    animation-name: floatAnimation;
+}
+
+.pulse {
+    animation-name: pulseAnimation;
+}
+
+.rotate {
+    animation-name: rotateAnimation;
+}
+
+.bounce {
+    animation-name: bounce;
+}
+
+.shimmer {
+    animation-name: shimmer;
+}
+
+/* Animation delay utilities */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-10 { animation-delay: 1s; }
+.delay-15 { animation-delay: 1.5s; }
+.delay-20 { animation-delay: 2s; }
+
+/* Responsive styles for animations */
+@media screen and (max-width: 992px) {
+    .animation-container {
+        max-width: 400px;
+    }
+    
+    .about-image .animation-container {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .animation-container {
+        max-width: 300px;
+    }
+    
+    .about-image .animation-container {
+        top: -30px;
+        right: -30px;
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .animation-container {
+        max-width: 250px;
+    }
+    
+    .about-image .animation-container {
+        top: -25px;
+        right: -25px;
+        width: 100px;
+        height: 100px;
+    }
 } 

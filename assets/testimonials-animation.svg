@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none">
+  <style>
+    .float { animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .pulse { animation: pulse 3s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.1); opacity: 1; } }
+    .spin { animation: spin 15s linear infinite; transform-origin: center; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .shimmer { animation: shimmer 4s ease-in-out infinite; }
+    @keyframes shimmer { 0%, 100% { opacity: 0.5; filter: brightness(1); } 50% { opacity: 1; filter: brightness(1.2); } }
+    .slide { animation: slide 8s ease-in-out infinite; }
+    @keyframes slide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
+  </style>
+  
+  <!-- Background -->
+  <circle cx="150" cy="150" r="120" fill="#5E3BEE" opacity="0.05"/>
+  <circle class="spin" cx="150" cy="150" r="100" stroke="#5E3BEE" stroke-width="2" stroke-dasharray="5 10" opacity="0.3" fill="none"/>
+  
+  <!-- Testimonial Cards -->
+  <g class="float" style="animation-delay: 0.5s">
+    <rect x="60" y="80" width="80" height="100" rx="10" fill="white" stroke="#5E3BEE" stroke-width="2"/>
+    <circle cx="100" cy="110" r="15" fill="#5E3BEE" opacity="0.2"/>
+    <line x1="75" y1="140" x2="125" y2="140" stroke="#5E3BEE" stroke-width="1"/>
+    <line x1="75" y1="150" x2="120" y2="150" stroke="#5E3BEE" stroke-width="1"/>
+    <line x1="75" y1="160" x2="110" y2="160" stroke="#5E3BEE" stroke-width="1"/>
+    
+    <!-- Star Rating -->
+    <polygon points="80,175 83,182 90,183 85,188 86,195 80,192 74,195 75,188 70,183 77,182" fill="#FA5252"/>
+    <polygon points="95,175 98,182 105,183 100,188 101,195 95,192 89,195 90,188 85,183 92,182" fill="#FA5252"/>
+    <polygon points="110,175 113,182 120,183 115,188 116,195 110,192 104,195 105,188 100,183 107,182" fill="#FA5252"/>
+    <polygon points="125,175 128,182 135,183 130,188 131,195 125,192 119,195 120,188 115,183 122,182" fill="#FA5252" opacity="0.3"/>
+    <polygon points="140,175 143,182 150,183 145,188 146,195 140,192 134,195 135,188 130,183 137,182" fill="#FA5252" opacity="0.3"/>
+  </g>
+  
+  <g class="float" style="animation-delay: 1.5s">
+    <rect x="160" y="80" width="80" height="100" rx="10" fill="white" stroke="#FA5252" stroke-width="2"/>
+    <circle cx="200" cy="110" r="15" fill="#FA5252" opacity="0.2"/>
+    <line x1="175" y1="140" x2="225" y2="140" stroke="#FA5252" stroke-width="1"/>
+    <line x1="175" y1="150" x2="220" y2="150" stroke="#FA5252" stroke-width="1"/>
+    <line x1="175" y1="160" x2="210" y2="160" stroke="#FA5252" stroke-width="1"/>
+    
+    <!-- Star Rating -->
+    <polygon points="180,175 183,182 190,183 185,188 186,195 180,192 174,195 175,188 170,183 177,182" fill="#5E3BEE"/>
+    <polygon points="195,175 198,182 205,183 200,188 201,195 195,192 189,195 190,188 185,183 192,182" fill="#5E3BEE"/>
+    <polygon points="210,175 213,182 220,183 215,188 216,195 210,192 204,195 205,188 200,183 207,182" fill="#5E3BEE"/>
+    <polygon points="225,175 228,182 235,183 230,188 231,195 225,192 219,195 220,188 215,183 222,182" fill="#5E3BEE"/>
+    <polygon points="240,175 243,182 250,183 245,188 246,195 240,192 234,195 235,188 230,183 237,182" fill="#5E3BEE"/>
+  </g>
+  
+  <!-- Central Element -->
+  <g class="pulse">
+    <circle cx="150" cy="220" r="30" fill="white" stroke="#5E3BEE" stroke-width="3"/>
+    <text x="150" y="215" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE" text-anchor="middle">Client</text>
+    <text x="150" y="235" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE" text-anchor="middle">Reviews</text>
+  </g>
+  
+  <!-- Quote Marks -->
+  <g class="shimmer" style="animation-delay: 0.3s">
+    <path d="M60 60 Q60 40, 80 40 L80 50 Q70 50, 70 60 Z" fill="#5E3BEE" opacity="0.7"/>
+  </g>
+  
+  <g class="shimmer" style="animation-delay: 0.6s">
+    <path d="M240 60 Q240 40, 220 40 L220 50 Q230 50, 230 60 Z" fill="#FA5252" opacity="0.7"/>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g class="slide" style="animation-delay: 0.5s">
+    <circle cx="60" cy="250" r="8" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 1s">
+    <circle cx="90" cy="250" r="8" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 1.5s">
+    <circle cx="120" cy="250" r="8" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 2s">
+    <circle cx="150" cy="250" r="8" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 2.5s">
+    <circle cx="180" cy="250" r="8" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 3s">
+    <circle cx="210" cy="250" r="8" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="slide" style="animation-delay: 3.5s">
+    <circle cx="240" cy="250" r="8" fill="#FA5252" opacity="0.6"/>
+  </g>
+</svg>

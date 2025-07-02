@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500" fill="none">
+  <style>
+    .wave {
+      animation: wave 8s ease-in-out infinite;
+      transform-origin: 50% 50%;
+    }
+    @keyframes wave {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    .laptop-screen {
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      50% {
+        filter: brightness(1.3);
+      }
+    }
+    .code-line {
+      animation: type 4s steps(30) infinite;
+      transform-origin: left;
+    }
+    @keyframes type {
+      0% {
+        transform: scaleX(0);
+      }
+      50%, 100% {
+        transform: scaleX(1);
+      }
+    }
+  </style>
+  
+  <!-- Background Circles -->
+  <circle cx="100" cy="100" r="60" fill="#5E3BEE" opacity="0.1"/>
+  <circle cx="500" cy="400" r="80" fill="#5E3BEE" opacity="0.1"/>
+  <circle cx="450" cy="100" r="30" fill="#FA5252" opacity="0.1"/>
+  <circle cx="150" cy="450" r="40" fill="#FA5252" opacity="0.1"/>
+  
+  <!-- Laptop Base -->
+  <rect x="150" y="280" width="300" height="10" rx="2" fill="#333"/>
+  <path d="M130 280H470L490 330H110L130 280Z" fill="#444"/>
+  
+  <!-- Laptop Screen -->
+  <rect x="160" y="140" width="280" height="140" rx="5" fill="#333"/>
+  <rect class="laptop-screen" x="170" y="150" width="260" height="120" rx="2" fill="#1A1A2E"/>
+  
+  <!-- Code on Screen -->
+  <line class="code-line" x1="185" y1="165" x2="250" y2="165" stroke="#5E3BEE" stroke-width="2"/>
+  <line class="code-line" style="animation-delay: 0.5s" x1="185" y1="180" x2="300" y2="180" stroke="#FA5252" stroke-width="2"/>
+  <line class="code-line" style="animation-delay: 1s" x1="185" y1="195" x2="270" y2="195" stroke="#5E3BEE" stroke-width="2"/>
+  <line class="code-line" style="animation-delay: 1.5s" x1="185" y1="210" x2="320" y2="210" stroke="#FFF" stroke-width="2"/>
+  <line class="code-line" style="animation-delay: 2s" x1="185" y1="225" x2="280" y2="225" stroke="#FA5252" stroke-width="2"/>
+  <line class="code-line" style="animation-delay: 2.5s" x1="185" y1="240" x2="260" y2="240" stroke="#5E3BEE" stroke-width="2"/>
+  
+  <!-- Person -->
+  <circle cx="370" cy="220" r="35" fill="#FA5252"/>
+  <circle cx="370" cy="220" r="28" fill="#FFF"/>
+  
+  <!-- Floating Elements -->
+  <g class="wave" style="animation-delay: 1s">
+    <circle cx="450" cy="180" r="15" fill="#5E3BEE"/>
+    <path d="M445 180L455 180M450 175L450 185" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <g class="wave" style="animation-delay: 1.5s">
+    <rect x="100" y="220" width="30" height="30" rx="4" fill="#FA5252"/>
+    <path d="M110 235H120M115 230V240" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <g class="wave" style="animation-delay: 0.5s">
+    <rect x="480" cy="250" width="30" height="30" rx="15" fill="#5E3BEE"/>
+    <path d="M488 250L502 250M495 243V257" stroke="white" stroke-width="2" transform="rotate(45 495 250)"/>
+  </g>
+  
+  <g class="wave" style="animation-delay: 2s">
+    <polygon points="90,180 110,190 90,200" fill="#5E3BEE"/>
+  </g>
+</svg> 

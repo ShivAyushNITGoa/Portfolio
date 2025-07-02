@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Your Name</title>
+    <title>Portfolio | Ayush Kumar</title>
     <meta name="description" content="Professional portfolio showcasing my work, skills, and experience in web development, design, and digital solutions">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Ayush Kumar">
     <meta name="keywords" content="web developer, portfolio, frontend, UI/UX, JavaScript, React">
     
     <!-- Open Graph / Social Media Meta Tags -->
@@ -25,8 +25,8 @@
     <meta name="theme-color" content="#5e3bee">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/styles.css" as="style">
@@ -83,7 +83,9 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <a href="#" class="logo-link">AyushKumar<span>.</span></a>
+                    <a href="#" class="logo-link">
+                        <img src="assets/logo-premium.svg" alt="Ayush Kumar Logo" height="45">
+                    </a>
                 </div>
                 <div class="nav-menu" role="navigation">
                     <ul class="nav-list">
@@ -115,8 +117,8 @@
         <section class="hero" id="home">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-text" data-aos="fade-right">
-                        <h1 class="hero-title">Hi, I'm <span class="highlight">Ayush Kumar</span></h1>
+                    <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="hero-title">Hi, I'm <span class="gradient-text">Ayush Kumar</span></h1>
                         <h2 class="hero-subtitle">I create <span class="txt-rotate" data-period="2000" data-rotate='["web experiences.", "digital solutions.", "brand identities.", "mobile apps."]'></span></h2>
                         <p class="hero-description">A passionate developer focused on crafting clean, user-friendly experiences for the web and beyond.</p>
                         <div class="hero-buttons">
@@ -124,9 +126,9 @@
                             <a href="#contact" class="btn btn-outline">Contact Me</a>
                         </div>
                     </div>
-                    <div class="hero-image" data-aos="fade-left">
+                    <div class="hero-image">
                         <div class="image-wrapper">
-                            <img src="assets/hero-image.svg" alt="Hero Illustration">
+                            <img src="assets/hero-image02.svg" alt="Hero Illustration">
                         </div>
                     </div>
                 </div>
@@ -153,14 +155,17 @@
                     <p class="section-subtitle">My Introduction</p>
                 </div>
                 <div class="about-content">
-                    <div class="about-image" data-aos="fade-right">
-                        <img src="assets/about-image.jpg" alt="About Me">
+                    <div class="about-image" data-aos="fade-right" data-animate="animate-fade-right">
+                        <div class="animation-container">
+                            <img src="assets/about-animation.svg" alt="About Me Animation" class="section-animation">
+                        </div>
+                        <img src="assets/about-image.jpg" alt="About Me" loading="lazy">
                         <div class="experience-badge">
                             <span class="number">5+</span>
                             <span class="text">Years of Experience</span>
                         </div>
                     </div>
-                    <div class="about-text" data-aos="fade-left">
+                    <div class="about-text" data-aos="fade-left" data-animate="animate-fade-left">
                         <p>I am a passionate and creative professional with expertise in web development, UX/UI design, and digital solutions. With a strong background in both front-end and back-end technologies, I specialize in building responsive, accessible, and performant web applications.</p>
                         <p>My journey in tech began over 5 years ago, and since then, I've collaborated with startups, agencies, and established companies to bring their digital visions to life.</p>
                         <div class="about-info">
@@ -194,6 +199,9 @@
                     <p class="section-subtitle">My Technical Level</p>
                 </div>
                 <div class="skills-container">
+                    <div class="animation-container" data-aos="fade-up">
+                        <img src="assets/skills-animation.svg" alt="Skills Animation" class="section-animation">
+                    </div>
                     <div class="skills-content" data-aos="fade-right">
                         <div class="skills-tabs">
                             <div class="tab-btn active" data-target="frontend">Frontend</div>
@@ -349,9 +357,9 @@
                 </div>
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-animate="animate-fade-up">
                         <div class="project-img">
-                            <img src="assets/project-1.jpg" alt="Project 1">
+                            <img src="assets/project-1.jpg" data-src="assets/project-1.jpg" alt="Project 1" loading="lazy">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">E-commerce Platform</h3>
@@ -593,6 +601,9 @@
                     <h2 class="section-title">Testimonials</h2>
                     <p class="section-subtitle">Client Feedback</p>
                 </div>
+                <div class="animation-container" data-aos="fade-up">
+                    <img src="assets/testimonials-animation.svg" alt="Testimonials Animation" class="section-animation">
+                </div>
                 <div class="testimonials-slider" data-aos="fade-up">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
@@ -675,6 +686,9 @@
                     <h2 class="section-title">Contact Me</h2>
                     <p class="section-subtitle">Get In Touch</p>
                 </div>
+                <div class="animation-container" data-aos="fade-up">
+                    <img src="assets/contact-animation.svg" alt="Contact Animation" class="section-animation">
+                </div>
                 <div class="contact-content">
                     <div class="contact-info" data-aos="fade-right">
                         <div class="contact-card">
@@ -730,7 +744,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#" class="logo-link">AyushKumar<span>.</span></a>
+                    <a href="#" class="logo-link">
+                        <img src="assets/logo-premium.svg" alt="Ayush Kumar Logo" height="40">
+                    </a>
                     <p class="footer-description">Creating digital experiences that leave an impression.</p>
                 </div>
                 <div class="footer-links">
@@ -770,3 +786,4 @@
     <script src="js/main.js" defer></script>
 </body>
 </html> 
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

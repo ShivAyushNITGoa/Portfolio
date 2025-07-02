@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none">
+  <style>
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .pulse{animation:pulse 3s ease-in-out infinite}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.1);opacity:1}}
+    .grow{animation:grow 5s ease-in-out infinite}
+    @keyframes grow{0%,100%{transform:scaleY(0)}50%{transform:scaleY(1)}}
+    .slide{animation:slide 8s ease-in-out infinite}
+    @keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(20px)}}
+  </style>
+  
+  <circle cx="150" cy="150" r="120" fill="#5E3BEE" opacity="0.05"/>
+  
+  <g class="float" style="animation-delay:0.5s">
+    <rect x="80" y="80" width="180" height="40" rx="5" fill="white" stroke="#5E3BEE" stroke-width="2"/>
+    <text x="100" y="105" font-family="Arial" font-size="14" fill="#5E3BEE">2020 - Present</text>
+    <text x="190" y="105" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE">Senior Dev</text>
+  </g>
+  
+  <g class="float" style="animation-delay:1s">
+    <rect x="80" y="130" width="180" height="40" rx="5" fill="white" stroke="#5E3BEE" stroke-width="2"/>
+    <text x="100" y="155" font-family="Arial" font-size="14" fill="#5E3BEE">2018 - 2020</text>
+    <text x="190" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE">Web Dev</text>
+  </g>
+  
+  <g class="float" style="animation-delay:1.5s">
+    <rect x="80" y="180" width="180" height="40" rx="5" fill="white" stroke="#5E3BEE" stroke-width="2"/>
+    <text x="100" y="205" font-family="Arial" font-size="14" fill="#5E3BEE">2016 - 2018</text>
+    <text x="190" y="205" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE">Jr Dev</text>
+  </g>
+  
+  <!-- Timeline line -->
+  <line x1="60" y1="50" x2="60" y2="250" stroke="#5E3BEE" stroke-width="3" stroke-dasharray="5 5"/>
+  
+  <!-- Timeline dots -->
+  <g class="pulse" style="animation-delay:0s">
+    <circle cx="60" cy="100" r="8" fill="#FA5252"/>
+  </g>
+  
+  <g class="pulse" style="animation-delay:0.5s">
+    <circle cx="60" cy="150" r="8" fill="#FA5252"/>
+  </g>
+  
+  <g class="pulse" style="animation-delay:1s">
+    <circle cx="60" cy="200" r="8" fill="#FA5252"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g class="grow" style="animation-delay:0.2s">
+    <rect x="40" y="80" width="4" height="30" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:0.4s">
+    <rect x="32" y="80" width="4" height="20" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:0.6s">
+    <rect x="24" y="80" width="4" height="15" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:0.7s">
+    <rect x="40" y="130" width="4" height="30" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:0.9s">
+    <rect x="32" y="130" width="4" height="20" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:1.1s">
+    <rect x="24" y="130" width="4" height="15" fill="#FA5252" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:1.2s">
+    <rect x="40" y="180" width="4" height="30" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:1.4s">
+    <rect x="32" y="180" width="4" height="20" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <g class="grow" style="animation-delay:1.6s">
+    <rect x="24" y="180" width="4" height="15" fill="#5E3BEE" opacity="0.6"/>
+  </g>
+  
+  <!-- Skills indicators -->
+  <g class="slide" style="animation-delay:0.3s">
+    <rect x="270" y="85" width="20" height="30" rx="5" fill="#5E3BEE" opacity="0.3"/>
+    <rect x="270" y="95" width="20" height="20" rx="5" fill="#5E3BEE"/>
+  </g>
+  
+  <g class="slide" style="animation-delay:0.8s">
+    <rect x="270" y="135" width="20" height="30" rx="5" fill="#FA5252" opacity="0.3"/>
+    <rect x="270" y="145" width="20" height="20" rx="5" fill="#FA5252"/>
+  </g>
+  
+  <g class="slide" style="animation-delay:1.3s">
+    <rect x="270" y="185" width="20" height="30" rx="5" fill="#5E3BEE" opacity="0.3"/>
+    <rect x="270" y="195" width="20" height="20" rx="5" fill="#5E3BEE"/>
+  </g>
+  
+  <!-- Resume title -->
+  <g class="pulse">
+    <rect x="100" y="30" width="140" height="30" rx="15" fill="white" stroke="#5E3BEE" stroke-width="2"/>
+    <text x="170" y="50" font-family="Arial" font-size="14" font-weight="bold" fill="#5E3BEE" text-anchor="middle">Experience</text>
+  </g>
+  
+  <!-- Decorative corner elements -->
+  <path d="M20 20 L20 35 L35 35" stroke="#FA5252" stroke-width="2" fill="none"/>
+  <path d="M280 20 L280 35 L265 35" stroke="#FA5252" stroke-width="2" fill="none"/>
+  <path d="M20 280 L20 265 L35 265" stroke="#FA5252" stroke-width="2" fill="none"/>
+  <path d="M280 280 L280 265 L265 265" stroke="#FA5252" stroke-width="2" fill="none"/>
+</svg>

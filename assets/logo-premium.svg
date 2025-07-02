@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <!-- Premium sophisticated design -->
+  
+  <!-- Stylized A lettermark with refined geometry -->
+  <g transform="translate(10, 10)">
+    <!-- Main A shape with gradient -->
+    <defs>
+      <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5e3bee" />
+        <stop offset="100%" stop-color="#4a2db8" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Left side of A -->
+    <path d="M22 40L12 10h8l10 30h-8z" fill="url(#mainGradient)"/>
+    
+    <!-- Right side of A -->
+    <path d="M30 40L20 10h8l10 30h-8z" fill="#4a2db8" opacity="0.85"/>
+    
+    <!-- Horizontal bar with subtle animation -->
+    <line x1="16" y1="25" x2="36" y2="25" stroke="#5e3bee" stroke-width="2">
+      <animate attributeName="stroke-width" values="2;2.5;2" dur="4s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- Accent dot with pulse animation -->
+    <circle cx="40" cy="10" r="4" fill="#ff3e55">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4;3.5" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- AYUSH KUMAR text with premium typography -->
+  <g transform="translate(60, 30)">
+    <text font-family="'Poppins', sans-serif" font-weight="600" font-size="18" letter-spacing="0.5" fill="#333333">
+      <tspan x="0" y="0">AYUSH</tspan>
+      <tspan x="70" y="0" font-weight="300"> KUMAR</tspan>
+    </text>
+  </g>
+  
+  <!-- Elegant tagline -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Poppins', sans-serif" font-weight="300" font-size="8" letter-spacing="1.2" fill="#666666">
+      <tspan x="0" y="0">DIGITAL CRAFTSMAN</tspan>
+    </text>
+  </g>
+  
+  <!-- Subtle decorative element -->
+  <line x1="60" y1="48" x2="160" y2="48" stroke="#eaeaea" stroke-width="0.5"/>
+</svg> 

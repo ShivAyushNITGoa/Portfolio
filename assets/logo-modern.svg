@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <!-- Modern clean design with different color scheme -->
+  
+  <!-- Stylized A lettermark -->
+  <g transform="translate(10, 10)">
+    <!-- Main A shape -->
+    <path d="M25 40L15 10h8l10 30h-8z" fill="#3a86ff"/>
+    <path d="M33 40L23 10h8l10 30h-8z" fill="#4361ee"/>
+    
+    <!-- Horizontal bar -->
+    <line x1="18" y1="25" x2="38" y2="25" stroke="#3a86ff" stroke-width="2.5"/>
+    
+    <!-- Accent element -->
+    <circle cx="42" cy="12" r="4" fill="#ff006e">
+      <animate attributeName="r" values="3.5;4.5;3.5" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- AYUSH KUMAR text with modern typography -->
+  <g transform="translate(60, 30)">
+    <text font-family="'Poppins', sans-serif" font-weight="700" font-size="18" letter-spacing="1" fill="#333333">
+      <tspan x="0" y="0">AYUSH</tspan>
+      <tspan x="70" y="0" font-weight="300" letter-spacing="0.5"> KUMAR</tspan>
+    </text>
+  </g>
+  
+  <!-- Minimal tagline -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Poppins', sans-serif" font-weight="300" font-size="8" letter-spacing="1.5" fill="#666666">
+      <tspan x="0" y="0">CREATIVE DEVELOPER</tspan>
+    </text>
+  </g>
+</svg> 

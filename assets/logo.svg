@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <!-- Background Rectangle (optional) -->
+  <!-- <rect width="240" height="60" fill="#ffffff" rx="4"/> -->
+  
+  <!-- Stylized A lettermark -->
+  <g transform="translate(10, 10)">
+    <path d="M20 40L10 10h10l10 30h-10z" fill="#5e3bee"/>
+    <path d="M30 40L20 10h10l10 30h-10z" fill="#4a2db8"/>
+    <line x1="15" y1="25" x2="35" y2="25" stroke="#5e3bee" stroke-width="3"/>
+    
+    <!-- Accent dot -->
+    <circle cx="40" cy="10" r="4" fill="#ff3e55">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- AYUSH KUMAR text -->
+  <g transform="translate(60, 30)">
+    <text font-family="'Poppins', sans-serif" font-weight="600" font-size="18" fill="#333333">
+      <tspan x="0" y="0">AYUSH</tspan>
+      <tspan x="70" y="0" font-weight="400"> KUMAR</tspan>
+    </text>
+  </g>
+  
+  <!-- Tagline -->
+  <g transform="translate(60, 45)">
+    <text font-family="'Poppins', sans-serif" font-weight="300" font-size="8" fill="#666666">
+      <tspan x="0" y="0">WEB DEVELOPER & DESIGNER</tspan>
+    </text>
+  </g>
+</svg> 

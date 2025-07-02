@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Favicon based on the logo's lettermark -->
+  
+  <!-- Background (optional) -->
+  <rect width="64" height="64" rx="12" fill="#ffffff" opacity="0.01"/>
+  
+  <!-- Stylized A lettermark with refined geometry -->
+  <g transform="translate(12, 8)">
+    <!-- Main A shape with gradient -->
+    <defs>
+      <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5e3bee" />
+        <stop offset="100%" stop-color="#4a2db8" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Left side of A -->
+    <path d="M22 48L10 8h10l12 40h-10z" fill="url(#faviconGradient)"/>
+    
+    <!-- Right side of A -->
+    <path d="M32 48L20 8h10l12 40h-10z" fill="#4a2db8" opacity="0.85"/>
+    
+    <!-- Horizontal bar -->
+    <line x1="14" y1="28" x2="38" y2="28" stroke="#5e3bee" stroke-width="4"/>
+    
+    <!-- Accent dot with pulse animation -->
+    <circle cx="42" cy="8" r="6" fill="#ff3e55">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>
