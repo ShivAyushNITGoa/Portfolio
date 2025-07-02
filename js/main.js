@@ -3,6 +3,71 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Website loaded successfully!');
     
+    // Initialize Swiper slider immediately if available
+    if (typeof Swiper !== 'undefined') {
+        console.log('Initializing Swiper...');
+        const testimonialsSwiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+    } else {
+        console.log('Swiper not available');
+        // Try to initialize Swiper after a delay if it wasn't available immediately
+        setTimeout(() => {
+            if (typeof Swiper !== 'undefined') {
+                console.log('Initializing Swiper after delay...');
+                const testimonialsSwiper = new Swiper('.swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    grabCursor: true,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    }
+                });
+            }
+        }, 1000);
+    }
+    
     // Preloader
     const preloader = document.querySelector('.preloader');
     if (preloader) {
@@ -260,36 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             });
-        });
-    }
-    
-    // Initialize Swiper slider if available
-    if (typeof Swiper !== 'undefined') {
-        const testimonialsSwiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            grabCursor: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            }
         });
     }
     
