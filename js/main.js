@@ -84,9 +84,28 @@ document.addEventListener('DOMContentLoaded', function() {
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
-            once: true,
-            mirror: false
+            once: false,
+            mirror: false,
+            disable: 'mobile'
         });
+    } else {
+        // If AOS is not available, try to load it
+        console.log('AOS not available, attempting to load...');
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/aos@next/dist/aos.js';
+        script.onload = function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: false,
+                    mirror: false,
+                    disable: 'mobile'
+                });
+                console.log('AOS loaded and initialized successfully');
+            }
+        };
+        document.body.appendChild(script);
     }
     
     // Set current year in footer
@@ -385,5 +404,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 scrollToTopBtn.classList.remove('visible');
             }
         });
+    }
+    
+    // Ensure about section animation is working
+    const aboutAnimation = document.querySelector('.about-animation-container .skills-animation');
+    if (aboutAnimation) {
+        console.log('About animation found');
+        
+        // Force animation refresh
+        setTimeout(() => {
+            // Make sure all animation elements are visible
+            const skillBubbles = document.querySelectorAll('.about-animation-container .skill-bubble');
+            skillBubbles.forEach((bubble, index) => {
+                bubble.style.opacity = '1';
+                bubble.style.visibility = 'visible';
+                
+                // Add a slight delay to each bubble
+                bubble.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Make sure center circle is visible
+            const centerCircle = document.querySelector('.about-animation-container .center-circle');
+            if (centerCircle) {
+                centerCircle.style.opacity = '1';
+                centerCircle.style.visibility = 'visible';
+            }
+            
+            // Make sure rotating circle is visible
+            const rotatingCircle = document.querySelector('.about-animation-container .rotating-circle');
+            if (rotatingCircle) {
+                rotatingCircle.style.opacity = '0.7';
+                rotatingCircle.style.visibility = 'visible';
+            }
+            
+            // Make sure experience badge is visible
+            const experienceBadge = document.querySelector('.experience-badge');
+            if (experienceBadge) {
+                experienceBadge.style.visibility = 'visible';
+                experienceBadge.style.opacity = '1';
+                experienceBadge.style.transform = 'translateZ(0)';
+            }
+            
+            console.log('Animation elements initialized');
+        }, 500);
     }
 }); 

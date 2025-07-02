@@ -575,43 +575,86 @@ img {
 .about-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
+    position: relative;
 }
 
 .about-image {
     position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(94, 59, 238, 0.15);
+    margin-bottom: 50px;
+    z-index: 1;
 }
 
 .about-image img {
-    border-radius: 15px;
-    transition: transform 0.5s ease;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
 }
 
+/* Animation container - limit to about section only */
+.animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    text-align: center;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+/* Ensure animations only appear in the about section */
+.about-image .skills-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+/* Experience badge styles - ensure it doesn't overlap */
 .experience-badge {
     position: absolute;
-    right: -20px;
-    bottom: -20px;
+    bottom: -25px;
+    right: -25px;
     background-color: var(--primary-color);
-    color: #fff;
-    padding: 1rem;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(94, 59, 238, 0.5);
+    z-index: 10;
+    text-align: center;
+    min-width: 200px;
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+}
+
+.experience-badge:hover {
+    transform: translateY(-5px) translateZ(0);
+    box-shadow: 0 12px 30px rgba(94, 59, 238, 0.6);
 }
 
 .experience-badge .number {
-    font-size: 2rem;
-    font-weight: var(--font-bold);
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .experience-badge .text {
-    font-size: var(--small-font-size);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 8px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
 }
 
 .about-text p {
@@ -1327,6 +1370,35 @@ img {
     .footer-content {
         grid-template-columns: 1fr 1fr;
     }
+    
+    .about-image .animation-container {
+        top: -40px;
+        left: -40px;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .skill-bubble {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+    
+    .center-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+    }
+    
+    .rotating-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .experience-badge {
+        min-width: 180px;
+        padding: 15px 25px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1403,6 +1475,43 @@ img {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
+    .about-image .animation-container {
+        top: -30px;
+        left: -30px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .skill-bubble {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+    
+    .center-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+    
+    .rotating-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .experience-badge {
+        min-width: 160px;
+        padding: 12px 20px;
+    }
+    
+    .experience-badge .number {
+        font-size: 2.5rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -1444,6 +1553,44 @@ img {
     .resume-tabs {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .about-image .animation-container {
+        top: -60px;
+        right: -60px;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .skill-bubble {
+        width: 35px;
+        height: 35px;
+        font-size: 10px;
+    }
+    
+    .center-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .rotating-circle {
+        width: 110px;
+        height: 110px;
+        border-width: 1px;
+    }
+    
+    .experience-badge {
+        padding: 1rem 1.5rem;
+        min-width: 140px;
+    }
+    
+    .experience-badge .number {
+        font-size: 2rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 0.9rem;
     }
 }
 
@@ -1735,51 +1882,148 @@ img.loaded {
     justify-content: center;
     align-items: center;
     z-index: 1;
+    text-align: center;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
 }
 
+/* Section animations - general styling */
 .section-animation {
     width: 100%;
     height: auto;
-    max-width: 400px;
-    filter: drop-shadow(0 10px 15px rgba(94, 59, 238, 0.15));
-    transition: transform 0.5s ease, filter 0.5s ease;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
-.section-animation:hover {
-    transform: translateY(-10px);
-    filter: drop-shadow(0 15px 20px rgba(94, 59, 238, 0.25));
+/* Specific styles for section animations */
+.skills-animation-container,
+.testimonials-animation-container,
+.contact-animation-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 3rem !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    float: none !important;
+    clear: both !important;
 }
 
-.about-image .animation-container {
+/* Container styles to ensure proper centering */
+.skills .container,
+.testimonials .container,
+.contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* About section specific animation container */
+.about-animation-container {
+    position: absolute !important;
+    width: 300px !important;
+    height: 300px !important;
+    top: -60px !important;
+    left: -60px !important;
+    z-index: 5 !important;
+    overflow: visible !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+    display: block !important;
+    transform: none !important;
+}
+
+/* About section animation styles */
+.skills-animation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.skill-bubble {
     position: absolute;
-    top: -60px;
-    right: -60px;
-    width: 180px;
-    height: 180px;
-    z-index: 1;
-    pointer-events: none;
-    overflow: visible;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(94, 59, 238, 0.4);
+    animation: float 6s ease-in-out infinite;
+    opacity: 1;
+    visibility: visible;
+    z-index: 6;
 }
 
-.skills-container .animation-container {
-    grid-column: 1 / -1;
-    margin-bottom: 3rem;
+.skill-bubble.html {
+    top: 30px;
+    left: 30px;
 }
 
-.projects .animation-container {
-    margin-bottom: 2rem;
+.skill-bubble.css {
+    top: 30px;
+    right: 30px;
+    animation-delay: 0.5s;
 }
 
-.testimonials .animation-container {
-    margin-bottom: 2rem;
+.skill-bubble.js {
+    bottom: 30px;
+    left: 30px;
+    animation-delay: 1s;
 }
 
-.contact .animation-container {
-    margin-bottom: 2rem;
+.skill-bubble.react {
+    bottom: 30px;
+    right: 30px;
+    animation-delay: 1.5s;
 }
 
-/* Animation for SVG elements */
-@keyframes floatAnimation {
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--primary-color), #7e5af7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(94, 59, 238, 0.5);
+    animation: pulse 4s ease-in-out infinite;
+    opacity: 1;
+    visibility: visible;
+    z-index: 7;
+}
+
+.rotating-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px dashed var(--primary-color);
+    animation: rotate 20s linear infinite;
+    opacity: 0.8;
+    visibility: visible;
+    z-index: 6;
+}
+
+@keyframes float {
     0%, 100% {
         transform: translateY(0);
     }
@@ -1788,7 +2032,7 @@ img.loaded {
     }
 }
 
-@keyframes pulseAnimation {
+@keyframes pulse {
     0%, 100% {
         transform: scale(1);
         opacity: 0.8;
@@ -1799,236 +2043,174 @@ img.loaded {
     }
 }
 
-@keyframes rotateAnimation {
+@keyframes rotate {
     from {
-        transform: rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
-@keyframes drawLine {
-    from {
-        stroke-dashoffset: 100;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
+/* Make sure the animation is visible */
+.about-image .animation-container {
+    position: absolute;
+    top: -140px;
+    right: -140px;
+    width: 280px;
+    height: 280px;
+    z-index: 3;
+    pointer-events: none;
+    overflow: visible;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+    filter: drop-shadow(0 10px 20px rgba(94, 59, 238, 0.3));
 }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0) scale(1);
-    }
-    40% {
-        transform: translateY(-20px) scale(0.95);
-    }
-    60% {
-        transform: translateY(-10px) scale(1.05);
-    }
+/* Skills section specific animation */
+.skills-svg {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
-@keyframes shimmer {
-    0% {
-        opacity: 0.5;
-        filter: brightness(1);
-    }
-    50% {
-        opacity: 1;
-        filter: brightness(1.2);
-    }
-    100% {
-        opacity: 0.5;
-        filter: brightness(1);
-    }
-}
-
-.animated-element {
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-.float {
-    animation-name: floatAnimation;
-}
-
-.pulse {
-    animation-name: pulseAnimation;
-}
-
-.rotate {
-    animation-name: rotateAnimation;
-}
-
-.bounce {
-    animation-name: bounce;
-}
-
-.shimmer {
-    animation-name: shimmer;
-}
-
-/* Animation delay utilities */
-.delay-0 { animation-delay: 0s; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-.delay-10 { animation-delay: 1s; }
-.delay-15 { animation-delay: 1.5s; }
-.delay-20 { animation-delay: 2s; }
-
-/* Responsive styles for animations */
+/* Media queries for responsive animations */
 @media screen and (max-width: 992px) {
-    .animation-container {
-        max-width: 400px;
+    .about-animation-container {
+        top: -40px !important;
+        left: -40px !important;
+        width: 250px !important;
+        height: 250px !important;
     }
     
-    .about-image .animation-container {
-        position: absolute;
-        top: -40px;
-        right: -40px;
-        width: 150px;
-        height: 150px;
+    .skill-bubble {
+        width: 60px;
+        height: 60px;
+        font-size: 14px;
+    }
+    
+    .center-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+    }
+    
+    .rotating-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .experience-badge {
+        min-width: 180px;
+        padding: 15px 25px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .animation-container {
-        max-width: 300px;
+    .about-animation-container {
+        top: -30px !important;
+        left: -30px !important;
+        width: 200px !important;
+        height: 200px !important;
     }
     
-    .about-image .animation-container {
-        top: -30px;
-        right: -30px;
-        width: 120px;
-        height: 120px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .animation-container {
-        max-width: 250px;
+    .skill-bubble {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
     }
     
-    .about-image .animation-container {
-        top: -25px;
-        right: -25px;
+    .center-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+    
+    .rotating-circle {
         width: 100px;
         height: 100px;
     }
-}
-
-/* Testimonials Slider Styles */
-.swiper-container {
-    width: 100%;
-    padding-bottom: 50px;
-}
-
-.swiper-slide {
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.testimonial-card {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.quote-icon {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial-text {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.author-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
-}
-
-.author-info h4 {
-    margin: 0;
-    font-weight: 600;
-}
-
-.author-info p {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
-.testimonial-rating {
-    color: #ffb400;
-    font-size: 0.875rem;
-}
-
-.swiper-pagination {
-    bottom: 0;
-}
-
-.swiper-pagination-bullet {
-    background: var(--text-muted);
-    opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary-color);
-    opacity: 1;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--primary-color);
-    width: 40px;
-    height: 40px;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 1.5rem;
-}
-
-/* Dark mode adjustments for testimonials */
-.dark-mode .testimonial-card {
-    background-color: var(--card-bg-dark);
-}
-
-.dark-mode .testimonial-rating {
-    color: #ffb400;
-}
-
-@media (max-width: 768px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
+    
+    .experience-badge {
+        min-width: 160px;
+        padding: 12px 20px;
     }
+    
+    .experience-badge .number {
+        font-size: 2.5rem;
+    }
+    
+    .experience-badge .text {
+        font-size: 1rem;
+    }
+}
+
+/* Hide any unwanted animations outside the about section */
+.animation-container:not(.about-animation-container) .skills-animation,
+.animation-container:not(.about-animation-container) .skill-bubble,
+.animation-container:not(.about-animation-container) .center-circle,
+.animation-container:not(.about-animation-container) .rotating-circle {
+    display: none !important;
+}
+
+/* Center animations in each section */
+.skills .animation-container,
+.testimonials .animation-container,
+.contact .animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+/* Center animations in specific sections */
+#skills .animation-container,
+.testimonials .animation-container,
+#contact .animation-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#skills .section-animation,
+.testimonials .section-animation,
+#contact .section-animation {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Animation containers - specific styling for each section */
+.skills-animation-container,
+.testimonials-animation-container,
+.contact-animation-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+}
+
+.skills-animation-container img,
+.testimonials-animation-container img,
+.contact-animation-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
 } 

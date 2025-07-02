@@ -1,55 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 250 250" fill="none">
-  <style>
-    .rotate { animation: rotate 20s linear infinite; transform-origin: center; }
-    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .pulse { animation: pulse 4s ease-in-out infinite; }
-    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.1); opacity: 1; } }
-    .float { animation: float 6s ease-in-out infinite; }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    .draw { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 3s linear forwards infinite; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    .shimmer { animation: shimmer 4s ease-in-out infinite; }
-    @keyframes shimmer { 0%, 100% { opacity: 0.5; filter: brightness(1); } 50% { opacity: 1; filter: brightness(1.2); } }
-    .bounce { animation: bounce 3s ease-in-out infinite; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0) scale(1); } 40% { transform: translateY(-15px) scale(0.95); } 60% { transform: translateY(-7px) scale(1.05); } }
-  </style>
-  <circle cx="125" cy="125" r="100" fill="#5E3BEE" opacity="0.08"/>
-  <circle class="rotate" cx="125" cy="125" r="85" stroke="#5E3BEE" stroke-width="2" stroke-dasharray="5 10" opacity="0.3" fill="none"/>
-  <g class="bounce" style="animation-delay: 0.5s">
-    <circle cx="125" cy="125" r="30" fill="#FA5252" opacity="0.2"/>
-    <circle cx="125" cy="125" r="20" fill="#FA5252" opacity="0.4"/>
-    <text x="125" y="130" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">5+</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.1); opacity: 1; }
+      }
+      .spin {
+        animation: spin 20s linear infinite;
+        transform-origin: center;
+      }
+      .float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .pulse {
+        animation: pulse 4s ease-in-out infinite;
+      }
+      .delay1 { animation-delay: 0.5s; }
+      .delay2 { animation-delay: 1s; }
+      .delay3 { animation-delay: 1.5s; }
+    </style>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="125" cy="125" r="120" fill="#5E3BEE" opacity="0.08"/>
+  
+  <!-- Rotating Ring -->
+  <circle class="spin" cx="125" cy="125" r="100" stroke="#5E3BEE" stroke-width="2" stroke-dasharray="10 15" fill="none"/>
+  
+  <!-- Center Element -->
+  <g class="pulse">
+    <circle cx="125" cy="125" r="40" fill="#FA5252" opacity="0.2"/>
+    <circle cx="125" cy="125" r="25" fill="#FA5252" opacity="0.4"/>
+    <text x="125" y="130" font-family="Arial" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">5+</text>
   </g>
-  <g class="float" style="animation-delay: 0.2s">
-    <circle cx="70" cy="80" r="15" fill="#5E3BEE" opacity="0.8"/>
-    <text x="70" y="84" font-family="Arial" font-size="10" fill="white" text-anchor="middle">HTML</text>
+  
+  <!-- Floating Elements -->
+  <g class="float">
+    <circle cx="65" cy="75" r="20" fill="#5E3BEE" opacity="0.8"/>
+    <text x="65" y="80" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">HTML</text>
   </g>
-  <g class="float" style="animation-delay: 0.7s">
-    <circle cx="180" cy="80" r="15" fill="#5E3BEE" opacity="0.8"/>
-    <text x="180" y="84" font-family="Arial" font-size="10" fill="white" text-anchor="middle">CSS</text>
+  
+  <g class="float delay1">
+    <circle cx="185" cy="75" r="20" fill="#5E3BEE" opacity="0.8"/>
+    <text x="185" y="80" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">CSS</text>
   </g>
-  <g class="float" style="animation-delay: 1.2s">
-    <circle cx="70" cy="170" r="15" fill="#5E3BEE" opacity="0.8"/>
-    <text x="70" y="174" font-family="Arial" font-size="10" fill="white" text-anchor="middle">JS</text>
+  
+  <g class="float delay2">
+    <circle cx="65" cy="175" r="20" fill="#5E3BEE" opacity="0.8"/>
+    <text x="65" y="180" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">JS</text>
   </g>
-  <g class="float" style="animation-delay: 1.7s">
-    <circle cx="180" cy="170" r="15" fill="#5E3BEE" opacity="0.8"/>
-    <text x="180" y="174" font-family="Arial" font-size="10" fill="white" text-anchor="middle">React</text>
+  
+  <g class="float delay3">
+    <circle cx="185" cy="175" r="20" fill="#5E3BEE" opacity="0.8"/>
+    <text x="185" y="180" font-family="Arial" font-size="12" fill="#FFFFFF" text-anchor="middle">React</text>
   </g>
-  <line class="draw" x1="125" y1="125" x2="70" y2="80" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
-  <line class="draw" style="animation-delay: 0.5s" x1="125" y1="125" x2="180" y2="80" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
-  <line class="draw" style="animation-delay: 1s" x1="125" y1="125" x2="70" y2="170" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
-  <line class="draw" style="animation-delay: 1.5s" x1="125" y1="125" x2="180" y2="170" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
-  <g class="shimmer" style="animation-delay: 0.3s">
-    <circle cx="50" cy="50" r="8" fill="#FA5252" opacity="0.6"/>
-  </g>
-  <g class="shimmer" style="animation-delay: 0.6s">
-    <circle cx="200" cy="50" r="8" fill="#5E3BEE" opacity="0.6"/>
-  </g>
-  <g class="shimmer" style="animation-delay: 0.9s">
-    <circle cx="50" cy="200" r="8" fill="#5E3BEE" opacity="0.6"/>
-  </g>
-  <g class="shimmer" style="animation-delay: 1.2s">
-    <circle cx="200" cy="200" r="8" fill="#FA5252" opacity="0.6"/>
-  </g>
+  
+  <!-- Connecting Lines -->
+  <line x1="125" y1="125" x2="65" y2="75" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
+  <line x1="125" y1="125" x2="185" y2="75" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
+  <line x1="125" y1="125" x2="65" y2="175" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
+  <line x1="125" y1="125" x2="185" y2="175" stroke="#5E3BEE" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="40" cy="40" r="10" fill="#FA5252" opacity="0.6"/>
+  <circle cx="210" cy="40" r="10" fill="#5E3BEE" opacity="0.6"/>
+  <circle cx="40" cy="210" r="10" fill="#5E3BEE" opacity="0.6"/>
+  <circle cx="210" cy="210" r="10" fill="#FA5252" opacity="0.6"/>
 </svg>
